@@ -1,0 +1,496 @@
+{
+	"info": {
+		"_postman_id": "e012b6cf-7273-4fc7-b161-8a0bacb5bd3c",
+		"name": "BAIITE_AI_ChatBot_v1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18136487"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "username",
+									"value": "data.showkat",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Shortening",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/auth/login/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"auth",
+								"login",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Send Otp",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "purpose",
+									"value": "create_new_account",
+									"type": "text"
+								},
+								{
+									"key": "recipient",
+									"value": "data.showkat@gmail.com",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/auth/send-otp/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"auth",
+								"send-otp",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Verify Otp",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "purpose",
+									"value": "create_new_account",
+									"type": "text"
+								},
+								{
+									"key": "recipient",
+									"value": "data.showkat@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "code",
+									"value": "QE5H4",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/auth/verify-otp/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"auth",
+								"verify-otp",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Account",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "purpose",
+									"value": "create_new_account",
+									"type": "text"
+								},
+								{
+									"key": "recipient",
+									"value": "data.showkat@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "code",
+									"value": "QE5H4B",
+									"type": "text"
+								},
+								{
+									"key": "first_name",
+									"value": "Showkat",
+									"type": "text"
+								},
+								{
+									"key": "last_name",
+									"value": "Ali",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "this.showkat",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Shortening",
+									"type": "text"
+								},
+								{
+									"key": "photo",
+									"type": "file",
+									"src": "postman-cloud:///1efe3aef-1649-4450-bb0b-000102bd65d6"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/auth/create-account/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"auth",
+								"create-account",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "password reset",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "token {{TOKEN}}",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "purpose",
+									"value": "reset_password",
+									"type": "text"
+								},
+								{
+									"key": "recipient",
+									"value": "this.showkat@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "code",
+									"value": "64CEL1",
+									"type": "text"
+								},
+								{
+									"key": "new_password",
+									"value": "Shortening",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/auth/reset-password/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"auth",
+								"reset-password",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "token refresh",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "refresh",
+									"value": "{{REFRESH_TOKEN}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/auth/refresh-token/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"auth",
+								"refresh-token",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "token verify",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUwMTA0MTMyLCJpYXQiOjE3NTAxMDM4MzIsImp0aSI6ImRkZjdlN2NkZjk1MjQ0NmZhNTk4YWJiMWQwYTVhOGQxIiwidXNlcl9pZCI6MX0.I2HUYTTcD2YAeLwH44Cq3f5ffDzOtP_WpkO8xPquPFIa",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/auth/verify-token/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"auth",
+								"verify-token",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "refresh",
+									"value": "{{REFRESH_TOKEN}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/auth/logout/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"auth",
+								"logout",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get otp purposes",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/auth/otp-purpose-list/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"auth",
+								"otp-purpose-list",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "profile",
+			"item": [
+				{
+					"name": "me",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/profile/me",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"profile",
+								"me"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Chat Conversations",
+			"item": [
+				{
+					"name": "list",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/chat-conversations/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"chat-conversations",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "detail",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/chat-conversations/7/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"chat-conversations",
+								"7",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BASE_URL",
+			"value": "http://localhost:8000/api/v1",
+			"type": "string"
+		},
+		{
+			"key": "TOKEN",
+			"value": "fd",
+			"type": "string"
+		}
+	]
+}

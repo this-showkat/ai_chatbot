@@ -1,0 +1,7 @@
+ws://localhost:8000/ws/chat/?token={{ACCESS_TOKEN}}
+
+Request Body (Json Type Data):
+{
+  "message": "Write your query here",
+  "conversation_id": <null or conversation_id>
+}
